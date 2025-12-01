@@ -1,0 +1,20 @@
+# TASK 2a ------------
+# Standard Scalar ----------
+
+import numpy
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+dataframe = pd.read_csv(r'/content/diabetes (1).csv', names = ['preg', 'plass', 'press', 'skin', 'test', 'mass', 'pedi', 'age', 'class'])
+# print(dataframe)
+
+array = dataframe.values
+print(array)
+
+X = array[:, 0:8]
+Y = array[:, 8]
+
+scaler  = StandardScaler().fit(X)
+rescaledX = scaler.transform(X)
+
+numpy.set_printoptions(precision = 3)
+print(rescaledX[0:5, :])
