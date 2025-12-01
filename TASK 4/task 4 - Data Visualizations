@@ -1,0 +1,59 @@
+## TASK 4
+## Data Visualizations ----
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = [
+    ['E01', 'M', 21, 231, 'Overweight', 2321],
+    ['E02', 'F', 25, 180, 'Normal', 1800],
+    ['E03', 'M', 30, 250, 'Overweight', 2500],
+    ['E04', 'F', 22, 120, 'Underweight', 1200],
+    ['E05', 'M', 35, 200, 'Normal', 2000],
+    ['E06', 'F', 28, 160, 'Normal', 1600],
+    ['E07', 'M', 40, 280, 'Overweight', 2800],
+    ['E08', 'F', 23, 130, 'Underweight', 1300],
+    ['E09', 'M', 32, 210, 'Normal', 2100],
+    ['E10', 'F', 27, 170, 'Normal', 1700]
+]
+
+df = pd.DataFrame(data, columns = ['EMPID', 'Gender', 'Age', 'Sales', 'BMI', 'Income'])
+print(df)
+
+## Histogram
+print('Histogram')
+df.hist()
+plt.show()
+
+## Bar chart
+print('Bar Chart')
+df.plot.bar()
+plt.show()
+
+print("Bar Chart btw Sales and Income")
+plt.bar(df['Sales'], df['Income'])
+plt.show()
+
+## Box Plot
+print("Box Plot")
+df.plot.box()
+plt.show()
+
+print("Box plot Income")
+plt.boxplot(df['Income'])
+plt.show()
+
+## Pie Chart
+print("Pie Chart(Income)")
+plt.pie(df['Income'], labels = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'},autopct = '% 1.1f %%', shadow = True)
+plt.show()
+
+print("Pie Chart(Sales)")
+plt.pie(df['Sales'], labels = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'},autopct = '% 1.1f %%', shadow = True)
+plt.show()
+
+## Scatter Plot
+print("Scatter Plot")
+plt.scatter(df['Income'], df['Sales'])
+plt.show()
+
