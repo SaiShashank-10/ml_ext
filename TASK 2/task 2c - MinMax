@@ -1,0 +1,19 @@
+## Task 2c MinMAX -----
+import numpy
+import scipy
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+names  = ['preg', 'plass', 'press', 'skin', 'test', 'mass','pedi', 'age', 'class']
+dataframe = pd.read_csv('/content/diabetes (1).csv', names = names)
+
+array = dataframe.values
+print(array)
+
+X = array[:, 0:8]
+Y = array[:, 8]
+
+scaler = MinMaxScaler(feature_range = (0, 1))
+rescaledX = scaler.fit_transform(X)
+
+numpy.set_printoptions(precision = 2)
+print(binaryX[0:10, :])
